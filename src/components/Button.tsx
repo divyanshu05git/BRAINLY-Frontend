@@ -10,7 +10,7 @@ export interface ButtonProps{
 }
 
 //it is for every button
-const defaultStyles="rounded-md flex justify-between"
+const defaultStyles="rounded-md flex items-center font-light"
 
 const variantStyles={
     "primary":"bg-[#5046e4] text-white",
