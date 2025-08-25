@@ -6,7 +6,7 @@ export interface ButtonProps{
     text:string
     startIcon?:ReactElement
     endIcon?:ReactElement
-    onClick:()=> void
+    onClick?:()=> void
 }
 
 //it is for every button
@@ -23,8 +23,8 @@ const sizeStyles={
     "lg":"py-4 px-6"
 }
 
-export const Button =(props:ButtonProps) =>{
-    return <button className={`${variantStyles[props.variant]} ${sizeStyles[props.size]} ${defaultStyles}`}>{props.startIcon?<div className="pr-2">{props.startIcon}</div>:<></>} {props.text} {props.endIcon?<div className="pl-2">{props.endIcon}</div>:<></>}
+export const Button =({variant ,text ,startIcon, onClick , size}:ButtonProps) =>{
+    return <button onClick={onClick} className={`${variantStyles[variant]} ${sizeStyles[size]} ${defaultStyles}`}>{startIcon?<div className="pr-2">{startIcon}</div>:<></>} {text} <div className="pl-2"></div>:<></>
     </button>
 }
 
