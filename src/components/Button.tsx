@@ -24,7 +24,7 @@ const sizeStyles={
 }
 
 export const Button =({variant ,text ,startIcon, onClick , size}:ButtonProps) =>{
-    return <button onClick={onClick} className={`${variantStyles[variant]} ${sizeStyles[size]} ${defaultStyles}`}>{startIcon?<div className="pr-2">{startIcon}</div>:<></>} {text} <div className="pl-2"></div>:<></>
+    return <button onClick={onClick} className={`${variantStyles[variant]} ${sizeStyles[size]} ${defaultStyles}`}>{startIcon?<div className="pr-2">{startIcon}</div>:<></>} {text} <div className="pl-2"></div>
     </button>
 }
 
