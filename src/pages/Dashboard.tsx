@@ -6,9 +6,11 @@ import '../App.css'
 import { CreateContentModal } from '../components/CreateContentModal'
 import { useState } from 'react'
 import { SideBar } from '../components/Sidebar'
+import { useContent } from '../hooks/useContent'
 
 function Dashboard() {
   const [modalOpen , setModalOpen]=useState(false);
+  const contents=useContent();
 
   return (
         <div>
@@ -29,9 +31,16 @@ function Dashboard() {
           </div>
 
           <div className='flex gap-4'>
-            <Card title="Project Ideas" type="youtube" />
-          </div>
 
+            {contents.map(({type , link ,title})=> <Card 
+                type={type} 
+                link={link} 
+                title={title}
+            />)}
+
+            <Card title="Project Ideas" type="youtube" />
+
+          </div>
           </div>
         </div> 
   )       
