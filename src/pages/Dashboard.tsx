@@ -38,6 +38,7 @@ function Dashboard() {
                 title={title}
             />)}
 
+            {/* @ts-ignore */}
             <Card title="Project Ideas" type="youtube" />
 
           </div>
