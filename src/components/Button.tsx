@@ -7,6 +7,8 @@ export interface ButtonProps{
     startIcon?:ReactElement
     endIcon?:ReactElement
     onClick?:()=> void
+    fullwidth?:boolean
+    loading?:boolean
 }
 
 //it is for every button
@@ -23,8 +25,8 @@ const sizeStyles={
     "lg":"py-4 px-6"
 }
 
-export const Button =({variant ,text ,startIcon, onClick , size}:ButtonProps) =>{
-    return <button onClick={onClick} className={`${variantStyles[variant]} ${sizeStyles[size]} ${defaultStyles}`}>{startIcon?<div className="pr-2">{startIcon}</div>:<></>} {text} <div className="pl-2"></div>
+export const Button =({variant , fullwidth ,text , loading ,startIcon, onClick , size}:ButtonProps) =>{
+    return <button onClick={onClick} className={`${variantStyles[variant]} ${sizeStyles[size]} ${defaultStyles} ${fullwidth?' w-full flex justify-center':''} ${loading?"opacity-40":""} }`} disabled={loading}>{startIcon?<div className="pr-2">{startIcon}</div>:<></>} {text} <div className="pl-2"></div>
     </button>
 }
 
