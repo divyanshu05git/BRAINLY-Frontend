@@ -3,14 +3,17 @@ import { Input } from "../components/Input";
 import { useRef } from "react"
 import { BACKEND_URL } from "../components/config";
 import axios from "axios";
+import { useNavigate } from "react-router-dom"
 
 export function Signup(){
     const usernameRef= useRef<HTMLInputElement>(null);
     const passwordRef= useRef<HTMLInputElement>(null);
+    const navigate=useNavigate()
 
     async function signup(){
         const username = usernameRef.current?.value;
         const password = passwordRef.current?.value;
+
         try{
             await axios.post(
                 BACKEND_URL + "/api/v1/signup",{
@@ -21,6 +24,7 @@ export function Signup(){
                 // { headers: { "Content-Type": "application/json" } }
             );
 
+            navigate("/Signin")
             alert("You have signed up")
         }
         catch(err){
