@@ -39,8 +39,7 @@ function Dashboard() {
             />)}
 
             {/* @ts-ignore */}
-            <Card title="Project Ideas" type="youtube" />
-
+            
           </div>
           </div>
         </div> 
